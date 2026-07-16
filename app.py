@@ -6,7 +6,7 @@ import streamlit as st
 from model_utils import fit_pipeline, load_data, predict_single
 
 st.set_page_config(
-    page_title="Loan Approval Predictor",
+    page_title="CreditOptima - Loan Approval Predictor",
     page_icon="🏦",
     layout="wide",
 )
@@ -22,7 +22,7 @@ def get_artifacts():
 
 df, artifacts = get_artifacts()
 
-st.title("🏦 Loan Approval Predictor")
+st.title("🏦 CreditOptima - Loan Approval Predictor")
 st.caption(
     "Fill in an applicant's details to predict whether their loan would be approved. "
     "Models are trained on startup from `loan_approval_data.csv`."
