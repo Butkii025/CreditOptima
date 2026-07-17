@@ -32,8 +32,11 @@ confidence score for any applicant profile you enter.
 * XYZ is a mid-sized financial company that offers personal and home loans to customers across urban and rural regions of India. Every day, hundreds of customers apply for loans through online and branch applications.
 * Until now, XYZ has relied on a manual verification process, where loan officers evaluate applications by checking income proofs, employment details, credit history, and other supporting documents. This process is time-consuming, inconsistent, and prone to human bias.
 * As a result, the bank faces two major challenges:
+  
 *Good customers sometimes get rejected, leading to loss of business.*
+
 *High-risk customers sometimes get approved, leading to financial losses.*
+
 * To solve this problem, the bank wants to introduce an intelligent loan approval system powered by Machine Learning that can automatically analyze applicant details and predict whether a loan should be Approved or Rejected, before final human verification.
 * As the Machine Learning Engineer on this project, the goal is to design and develop this intelligent system using historical loan application data — one that learns hidden patterns from previous customer records and delivers accurate, fast, and unbiased loan approval decisions.
 
