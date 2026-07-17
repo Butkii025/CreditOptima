@@ -1,29 +1,149 @@
-# 🏦 Loan Approval Predictor
+<div align="center">
 
-An interactive Streamlit app that predicts whether a loan application would be
-approved, based on the analysis and models built in the original notebook
-(`notebook.ipynb`).
+# 🏦 CreditOptima
 
-The app trains three classifiers on startup — **Logistic Regression**,
-**K-Nearest Neighbors**, and **Naive Bayes** — on `loan_approval_data.csv`,
-lets you compare their performance, and lets you enter an applicant's details
-to get a live prediction.
+**Instant, transparent loan-approval predictions — powered by machine learning.**
 
-## Features
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://creditoptima.streamlit.app/)
+[![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-1.4%2B-orange)](https://scikit-learn.org/)
+[![License](https://img.shields.io/badge/license-MIT-green)](#license)
 
-- **Predict tab** — fill in an applicant's details and get an approval
-  prediction with an estimated probability, using the model of your choice.
-- **Model Comparison tab** — accuracy, precision, recall, F1 score, and
-  confusion matrices for all three models side by side.
-- **Dataset tab** — a quick look at the underlying data and class balance.
+**[🚀 Try the live app →](https://creditoptima.streamlit.app/)**
 
-## Project structure
+</div>
+
+---
+
+## Overview
+
+**CreditOptima** is an interactive Streamlit application that predicts whether
+a loan application is likely to be **approved or rejected**, based on
+applicant details like income, credit score, existing debt, and employment
+status.
+
+It trains three classic machine learning classifiers on startup — **Logistic
+Regression**, **K-Nearest Neighbors**, and **Naive Bayes** — lets you compare
+how each one performs, and gives you a live, explainable prediction with a
+confidence score for any applicant profile you enter.
+
+## ✨ Features
+
+| | |
+|---|---|
+| 🔮 **Live Prediction** | Fill in an applicant's financial and personal details and get an instant Approved / Not Approved verdict with an estimated approval probability. |
+| 🧠 **Model Choice** | Switch between Logistic Regression, K-Nearest Neighbors, and Naive Bayes to see how each model calls the same application. |
+| 📊 **Model Comparison** | Side-by-side accuracy, precision, recall, and F1 score, plus confusion matrices for every model. |
+| 🗂️ **Dataset Explorer** | A quick look at the underlying training data, including class balance and credit score distribution. |
+
+## 🖥️ Live Demo
+
+The app is deployed and publicly available on Streamlit Community Cloud:
+
+### 👉 [creditoptima.streamlit.app](https://creditoptima.streamlit.app/)
+
+No installation needed — just open the link and start predicting.
+
+## 🧩 How it works
+
+1. **Preprocessing** — missing numeric values are mean-imputed, missing
+   categorical values are imputed with the most frequent category.
+2. **Feature engineering** — `Credit_Score` and `DTI_Ratio` are transformed
+   into squared features (`Credit_Score_sq`, `DTI_Ratio_sq`) to better
+   capture non-linear effects on approval likelihood.
+3. **Encoding & scaling** — categorical fields (employment status, marital
+   status, loan purpose, property area, education, gender, employer category)
+   are one-hot encoded; all numeric features are standard-scaled.
+4. **Modeling** — three classifiers are trained on an 80/20 train-test split
+   and evaluated on accuracy, precision, recall, and F1 score.
+5. **Prediction** — new applicant data is passed through the same
+   preprocessing pipeline and scored by the selected model.
+
+## 📁 Project structure
 
 ```
-loan_app/
-├── app.py                    # Streamlit app (UI)
-├── model_utils.py            # Data loading, preprocessing, training, prediction
-├── loan_approval_data.csv    # Training data
+CreditOptima/
+├── app.py                    # Streamlit app (UI, tabs, prediction form)
+├── model_utils.py            # Data loading, preprocessing, training, prediction logic
+├── loan_approval_data.csv    # Training dataset
 ├── requirements.txt          # Python dependencies
 └── README.md
 ```
+
+## 🚀 Run it locally
+
+Clone the repo and set up a virtual environment:
+
+```bash
+git clone https://github.com/Butkii025/CreditOptima.git
+cd CreditOptima
+python -m venv venv
+source venv/bin/activate        # Windows: venv\Scripts\activate
+```
+
+Install dependencies and launch:
+
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+The app will open automatically at `http://localhost:8501`.
+
+### Using Anaconda
+
+```bash
+conda create -n creditoptima python=3.11 -y
+conda activate creditoptima
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+## ☁️ Deployment
+
+CreditOptima is deployed on **Streamlit Community Cloud**, which auto-builds
+from this repository:
+
+1. Push changes to the `main` branch.
+2. Streamlit Cloud detects the update, reinstalls `requirements.txt`, and
+   redeploys automatically.
+3. No servers, Docker files, or secrets are required — the models train in
+   memory on startup (and are cached, so it only happens once per instance).
+
+## 📈 Model performance
+
+| Model | Accuracy | Precision | Recall | F1 Score |
+|---|---:|---:|---:|---:|
+| Logistic Regression | ~0.87 | ~0.82 | ~0.75 | ~0.78 |
+| Naive Bayes | ~0.86 | ~0.82 | ~0.73 | ~0.77 |
+| K-Nearest Neighbors | ~0.76 | ~0.63 | ~0.60 | ~0.62 |
+
+*(Figures vary slightly by random seed / train-test split — see the **Model
+Comparison** tab in the live app for current numbers.)*
+
+## 🛠️ Tech stack
+
+- [Streamlit](https://streamlit.io/) — web app framework
+- [scikit-learn](https://scikit-learn.org/) — ML models & preprocessing
+- [pandas](https://pandas.pydata.org/) / [NumPy](https://numpy.org/) — data handling
+
+## 🤝 Contributing
+
+Issues and pull requests are welcome. If you'd like to add a new model,
+improve the UI, or extend the dataset, feel free to fork and open a PR.
+
+## 📄 License
+
+This project is available under the [MIT License](LICENSE).
+
+## ⚠️ Disclaimer
+
+CreditOptima is a demonstration project built for educational purposes. Its
+predictions are based on a sample dataset and should **not** be used as the
+sole basis for real lending or credit decisions.
+
+---
+
+<div align="center">
+Made with ❤️ and Streamlit
+</div>
