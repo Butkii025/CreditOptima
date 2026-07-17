@@ -63,12 +63,19 @@ No installation needed — just open the link and start predicting.
 
 ```
 CreditOptima/
-├── app.py                    # Streamlit app (UI, tabs, prediction form)
+├── app.py                    # Streamlit app (UI)
 ├── model_utils.py            # Data loading, preprocessing, training, prediction logic
 ├── loan_approval_data.csv    # Training dataset
-├── requirements.txt          # Python dependencies
+├── requirements.txt          # Dependencies
 └── README.md
 ```
+## 📁 Visuals
+
+<img width="392" height="293" alt="Screenshot 2026-07-17 155102" src="https://github.com/user-attachments/assets/8fbb0dea-d647-4992-ae4a-5b19ca973a4f" />
+<img width="410" height="248" alt="Screenshot 2026-07-17 155149" src="https://github.com/user-attachments/assets/db26b85d-fbff-467e-9a21-7af813c50d23" />
+<img width="417" height="100" alt="Screenshot 2026-07-17 155129" src="https://github.com/user-attachments/assets/b491edbb-22e0-40f6-8d78-eae05bb97003" />
+
+---
 
 ## 🚀 Run it locally
 
