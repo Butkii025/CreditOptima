@@ -143,14 +143,10 @@ improve the UI, or extend the dataset, feel free to fork and open a PR.
 
 This project is available under the [MIT License](LICENSE).
 
-## ⚠️ Disclaimer
+## ⚠️ NOte
 
 CreditOptima is a demonstration project built for educational purposes. Its
 predictions are based on a sample dataset and should **not** be used as the
 sole basis for real lending or credit decisions.
 
 ---
-
-<div align="center">
-Made with ❤️ and Streamlit
-</div>
