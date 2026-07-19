@@ -2,7 +2,7 @@
 
 # CreditOptima
 
-**Instant, transparent loan-approval predictions system — powered by machine learning.**
+**Instant, transparent loan-approval predictions system - powered by machine learning.**
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://creditoptima.streamlit.app/)
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/)
