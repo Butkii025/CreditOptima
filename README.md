@@ -7,9 +7,9 @@
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://creditoptima.streamlit.app/)
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.4%2B-orange)](https://scikit-learn.org/)
-[![License](https://img.shields.io/badge/license-MIT-green)](#license)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-**[ Try the live app ](https://creditoptima.streamlit.app/)**
+**Try to check your loan approval [ CreditOptima ](https://creditoptima.streamlit.app/)**
 
 </div>
 
