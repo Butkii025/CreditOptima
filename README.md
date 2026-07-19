@@ -54,7 +54,7 @@ confidence score for any applicant profile you enter.
 
 The app is deployed and publicly available on Streamlit Community Cloud:
 
-### [creditoptima.streamlit.app](https://creditoptima.streamlit.app/)
+### [CreditOptima](https://creditoptima.streamlit.app/)
 
 No installation needed — just open the link and start predicting.
 
