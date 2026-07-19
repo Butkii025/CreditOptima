@@ -28,11 +28,10 @@ st.caption(
     "Models are trained on startup from `loan_approval_data.csv`."
 )
 
-tab_predict, tab_models, tab_data = st.tabs(["🔮 Predict", "📊 Model Comparison", "🗂️ Dataset"])
+tab_predict, tab_models = st.tabs(["🔮 Predict", "📊 Model Comparison"])
 
-# ----------------------------------------------------------------------------
 # PREDICT TAB
-# ----------------------------------------------------------------------------
+
 with tab_predict:
     model_name = st.selectbox(
         "Model to use for prediction",
@@ -110,9 +109,8 @@ with tab_predict:
         st.progress(min(max(proba, 0.0), 1.0))
         st.caption(f"Predicted using **{model_name}**.")
 
-# ----------------------------------------------------------------------------
 # MODEL COMPARISON TAB
-# ----------------------------------------------------------------------------
+
 with tab_models:
     st.subheader("How each model performed on the held-out test set")
 
@@ -144,19 +142,3 @@ with tab_models:
             )
             st.dataframe(cm, use_container_width=True)
 
-# ----------------------------------------------------------------------------
-# DATASET TAB
-# ----------------------------------------------------------------------------
-with tab_data:
-    st.subheader("Dataset preview")
-    st.dataframe(df.head(20), use_container_width=True)
-
-    c1, c2 = st.columns(2)
-    with c1:
-        st.write("**Loan approval class balance**")
-        st.bar_chart(df["Loan_Approved"].value_counts())
-    with c2:
-        st.write("**Credit score distribution**")
-        st.bar_chart(df["Credit_Score"].value_counts(bins=15).sort_index())
-
-    st.caption(f"{len(df)} rows · {df.shape[1]} columns")
